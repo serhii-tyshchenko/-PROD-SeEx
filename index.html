@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SelectorExtractor</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <section>
+        <textarea
+          id="input-data"
+          placeholder="Paste HTML markup here"
+          class="input__data"
+        ></textarea>
+        <div class="controls">
+          <input type="checkbox" id="js-extract-tags" />
+          <label for="js-extract-tags">Tags</label>
+          <input type="checkbox" id="js-extract-ids" />
+          <label for="js-extract-ids">IDs</label>
+          <input type="checkbox" id="js-extract-classes" checked />
+          <label for="js-extract-classes">Classes</label>
+        </div>
+        <button class="btn btn-primary btn-lg" id="extract-btn">Extract</button>
+      </section>
+      <section>
+        <textarea id="output-data" placeholder="Result" disabled></textarea>
+        <button class="btn btn-secondary btn-lg" id="copy-btn">Copy</button>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+/* GENERAL STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+}
+
+textarea {
+  display: block;
+  flex-grow: 1;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  border-radius: 5px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  padding: 15px;
+}
+/* COMMON STYLES */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.controls input {
+  margin-right: 5px;
+}
+.controls label {
+  margin: 0 10px 0 0;
+}
+.controls label:last-child {
+  margin-right: 0;
+}
