@@ -1,12 +1,10 @@
-const INPUT = document.getElementById('input-data');
-const OUTPUT = document.getElementById('output-data');
-
+const INPUT = document.querySelector('#js-input-data');
+const OUTPUT = document.querySelector('#js-output-data');
 const EXTRACT_TAGS_CB = document.querySelector('#js-extract-tags');
 const EXTRACT_IDS_CB = document.querySelector('#js-extract-ids');
 const EXTRACT_CLASSES_CB = document.querySelector('#js-extract-classes');
-
-const EXTRACT_BTN = document.getElementById('extract-btn');
-const COPY_BTN = document.getElementById('copy-btn');
+const EXTRACT_BTN = document.querySelector('#js-extract-btn');
+const COPY_BTN = document.querySelector('#js-copy-btn');
 
 function extractSelectors() {
     const input = INPUT.value;
@@ -32,11 +30,13 @@ function extractSelectors() {
     OUTPUT.disabled = false;
     OUTPUT.value = result.join('\n');
 }
+
 function getMatches(string, regex, selector) {
     return [...new Set(string.match(regex))].map(
         (item) => `${selector}${item} {}`
     );
 }
+
 function filterTags(data) {
     const exclusions = [
         'head {}',
@@ -49,11 +49,12 @@ function filterTags(data) {
     ];
     return data.filter((item) => !exclusions.includes(item));
 }
-function copyResults() {
+
+function copyToClipboard() {
     OUTPUT.select();
     OUTPUT.setSelectionRange(0, 99999);
     document.execCommand('copy');
 }
 
 EXTRACT_BTN.addEventListener('click', extractSelectors);
-COPY_BTN.addEventListener('click', copyResults);
+COPY_BTN.addEventListener('click', copyToClipboard);
