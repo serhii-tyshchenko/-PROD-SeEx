@@ -20,7 +20,6 @@ function extractSelectors() {
         ? filterTags(getMatches(input, regexTag, ''))
         : [];
     const dataIds = extractIds ? getMatches(input, regexId, '#') : [];
-    // TODO Extract combined classes. Ex. "btn btn--primary"
     const dataClasses = extractClasses
         ? getMatches(input, regexClass, '.')
         : [];
@@ -32,7 +31,7 @@ function extractSelectors() {
 }
 
 function getMatches(string, regex, selector) {
-    return [...new Set(string.match(regex))].map(
+    return [...new Set(string.match(regex).join(' ').split(' '))].map(
         (item) => `${selector}${item} {}`
     );
 }
